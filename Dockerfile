@@ -19,16 +19,12 @@ run	yum install -y supervisor
 #
 ## Add system service config
 run	mkdir /var/log/supervisord/
-run	cp /opt/graphite/conf/storage-schemas.conf.example /opt/graphite/conf/storage-schemas.conf
-run	cp /opt/graphite/conf/storage-aggregation.conf.example /opt/graphite/conf/storage-aggregation.conf
 run	cp /opt/graphite/conf/graphite.wsgi.example /opt/graphite/conf/graphite.wsgi
 run	cp /opt/graphite/conf/graphTemplates.conf.example /opt/graphite/conf/graphTemplates.conf
-run	cp /opt/graphite/conf/carbon.conf.example /opt/graphite/conf/carbon.conf
 
 #
 ## Add graphite config
 add	./storage-schemas.conf /opt/graphite/conf/storage-schemas.conf
-run	cp /opt/graphite/conf/storage-schemas.conf.example /opt/graphite/conf/storage-schemas.conf
 run	cp /opt/graphite/conf/storage-aggregation.conf.example /opt/graphite/conf/storage-aggregation.conf
 run	cp /opt/graphite/conf/carbon.conf.example /opt/graphite/conf/carbon.conf
 add	./local_settings.py /opt/graphite/webapp/graphite/local_settings.py
